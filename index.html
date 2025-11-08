@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fiches aide-mémoire PSE 2024 pour secouristes bénévoles">
+    <meta name="theme-color" content="#c41e3a">
+    <title>PSE 2024 - Fiches Secourisme</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚑 PSE 2024</h1>
+            <p class="subtitle">Fiches aide-mémoire pour secouristes bénévoles</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Barre de recherche -->
+        <div class="search-box">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="🔍 Rechercher une fiche..."
+                aria-label="Rechercher une fiche"
+                autocomplete="off"
+            >
+            <div id="searchResults" class="search-results"></div>
+        </div>
+
+        <!-- Navigation par catégories -->
+        <nav class="categories">
+            <h2>Accès rapide par catégorie</h2>
+            <div class="category-grid">
+                <button class="category-card urgence" data-category="urgences-vitales">
+                    <span class="category-icon">🚨</span>
+                    <h3>Urgences Vitales</h3>
+                    <span class="category-count"></span>
+                </button>
+
+                <button class="category-card trauma" data-category="traumatologie">
+                    <span class="category-icon">🩹</span>
+                    <h3>Traumatologie</h3>
+                    <span class="category-count"></span>
+                </button>
+
+                <button class="category-card malaise" data-category="malaises">
+                    <span class="category-icon">😵</span>
+                    <h3>Malaises</h3>
+                    <span class="category-count"></span>
+                </button>
+
+                <button class="category-card technique" data-category="techniques">
+                    <span class="category-icon">⚕️</span>
+                    <h3>Gestes Techniques</h3>
+                    <span class="category-count"></span>
+                </button>
+
+                <button class="category-card pediatrie" data-category="pediatrie">
+                    <span class="category-icon">👶</span>
+                    <h3>Pédiatrie</h3>
+                    <span class="category-count"></span>
+                </button>
+
+                <button class="category-card situation" data-category="situations-particulieres">
+                    <span class="category-icon">📋</span>
+                    <h3>Situations Particulières</h3>
+                    <span class="category-count"></span>
+                </button>
+            </div>
+            <button id="resetFilter" class="reset-filter" style="display: none;">
+                Afficher toutes les fiches
+            </button>
+        </nav>
+
+        <!-- Liste des fiches -->
+        <section class="fiches-section">
+            <h2 id="sectionTitle">Toutes les fiches</h2>
+            <div id="fichesGrid" class="fiches-grid">
+                <!-- Les fiches seront insérées ici par JavaScript -->
+            </div>
+        </section>
+
+        <!-- Message si aucun résultat -->
+        <div id="noResults" class="no-results" style="display: none;">
+            <p>❌ Aucune fiche trouvée</p>
+            <button onclick="resetSearch()">Réinitialiser</button>
+        </div>
+    </main>
+
+    <!-- Modal pour afficher une fiche -->
+    <div id="ficheModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="ficheContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>⚠️ Important :</strong> Ces fiches sont des aide-mémoire basés sur les recommandations PSE 2024 officielles.</p>
+            <p>Elles ne remplacent pas une formation complète. En cas de doute, appelez le 15 ou le 18.</p>
+            <p class="version">Référentiel PSE 2024 - Dernière mise à jour : Novembre 2024</p>
+        </div>
+    </footer>
+
+    <script src="fiches-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
